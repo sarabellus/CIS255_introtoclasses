@@ -6,6 +6,8 @@
  class student
  {
  public:
+     student();
+     
      void fName(string fn);
      string fName();
 
@@ -18,14 +20,23 @@
      void creditsTaken(float credits);
      float creditsTaken();
 
-     void standing(float p_cr);
-     string standing();
+     virtual void standing(float p_cr);
+     virtual string standing();
 
      
- private:
+ protected:
      string p_fn, p_ln, p_st;
      float p_gpa, p_cr;
  };
+
+student::student()
+{
+    p_fn = "Donald";
+    p_ln = "Duck";
+    p_gpa = 0.00f;
+    p_cr = 0.00f;
+    p_st = "freshman";
+}
 
 void student::fName(string fn)
 {
